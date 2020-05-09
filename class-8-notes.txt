@@ -1,0 +1,19 @@
+Welcome to Front End Web Development!
+Instructor: Daniel Schroeder
+
+Lesson 8 - Colors
+
+Recap:
+  - HTML <input> element and validators
+
+Today, we will learn:
+  - How to build a Paint App.
+  - Different ways to represent color in CSS.
+  - The border-radius CSS property.
+  - The 'for' loop in JavaScript.
+  - How to attach event-handlers to mouse click and hover events.
+  - How to programatically change CSS of DOM elements.
+
+Homework:
+  - Display the currently selected color.
+  - Add a button to clear the canvas.

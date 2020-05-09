@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paint App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <h1>My Canvas</h1>
+
+  <div class="color-picker">
+    
+    <div class="color" style="background-color: rgb(255, 0, 0);"></div>
+    <div class="color" style="background-color: rgb(0, 255, 0);"></div>
+    <div class="color" style="background-color: rgb(0, 0, 255);"></div>
+    <div class="color" style="background-color: #ffff00;"></div>
+    <div class="color" style="background-color: #00ffff;"></div>
+    <div class="color" style="background-color: #ff00ff;"></div>
+    <div class="selected-color-wrapper">
+      <span>Current Color</span>
+      <div id="selected" class="color"></div>
+    </div>
+
+  </div>
+
+  <div id="canvas"></div>
+
+  <button onclick="clearCanvas();">Clear Canvas</button>
+
+
+
+  <script type="text/javascript">
+
+    for (var count = 0; count < 200; count++) {
+      $('#canvas').append('<div class="box"></div>');
+    }
+    
+    var selectedColor = 'red';
+
+    $('.box').hover(fillCanvas);
+    $('.color').click(changeColor);
+
+    $('.color:first-child').click();
+    
+    function fillCanvas(event) {
+      var box = event.target;
+      var css = {
+        'background-color': selectedColor,
+        'border-color': selectedColor,
+      };
+      $(box).css(css);
+    }
+    
+    function changeColor(event) {
+      var colorDiv = event.target;
+      selectedColor = $(colorDiv).css('background-color');
+      var css = {
+        'background-color': selectedColor,
+      };
+      $('#selected').css(css);
+    }
+
+    function clearCanvas() {
+      var css = {
+        'background-color': 'white',
+        'border-color': 'lightgray',
+      };
+      $('.box').css(css);
+    }
+
+  </script>
+
+</body>
+</html>
